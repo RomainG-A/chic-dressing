@@ -5,7 +5,7 @@ function ashe_options( $control ) {
 	$ashe_defaults = array(
 		'skins_select' => 'default',
 		'skins_dark_mode' => true,
-		'colors_content_accent' => '#ca9b52',
+		'colors_content_accent' => '#7d4e05',
 		'colors_content_bg' => '#ffffff',
 		'colors_header_bg' => '#ffffff',
 		'general_sidebar_width' => '270',
