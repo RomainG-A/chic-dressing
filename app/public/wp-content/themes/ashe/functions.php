@@ -293,8 +293,8 @@ function ashe_widgets_init() {
 		'description'   => __( 'Add widgets here to appear in your sidebar.', 'ashe' ),
 		'before_widget' => '<div id="%1$s" class="ashe-widget %2$s">',
 		'after_widget'  => '</div>',
-		'before_title'  => '<div class="widget-title"><h2>',
-		'after_title'   => '</h2></div>',
+		'before_title'  => '<div class="widget-title"><h3>',
+		'after_title'   => '</h3></div>',
 	) );
 
 	register_sidebar( array(

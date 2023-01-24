@@ -2,3 +2,26 @@
 [04-Jan-2023 21:45:15 UTC] Cron reschedule event error for hook: woocommerce_geoip_updater, Error code: invalid_schedule, Error message: L’évènement planifié n’existe pas., Data: {"schedule":"fifteendays","args":[],"interval":1296000}
 [04-Jan-2023 21:55:16 UTC] Erreur d’événement de replanification de tâche pour le crochet ewww_image_optimizer_relative_migration. Code d’erreur : invalid_schedule. Message d’erreur : L’évènement planifié n’existe pas.. Données : {"schedule":"ewwwio_relative_migration_interval","args":[],"interval":300}
 [23-Jan-2023 20:52:48 UTC] Erreur d’événement de replanification de tâche pour le crochet woocommerce_cleanup_rate_limits. Code d’erreur : could_not_set. Message d’erreur : La liste des évènements planifiés n’a pas pu être sauvegardée.. Données : {"schedule":"daily","args":[],"interval":86400}
+[24-Jan-2023 17:40:43 UTC] PHP Fatal error:  Cannot redeclare ashe_setup() (previously declared in C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\themes\chicdressing\functions.php:13) in C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\themes\ashe\functions.php on line 6
+[24-Jan-2023 17:40:43 UTC] PHP Stack trace:
+[24-Jan-2023 17:40:43 UTC] PHP   1. {main}() C:\Users\romai\Local Sites\chic-dressing\app\public\index.php:0
+[24-Jan-2023 17:40:43 UTC] PHP   2. require() C:\Users\romai\Local Sites\chic-dressing\app\public\index.php:17
+[24-Jan-2023 17:40:43 UTC] PHP   3. require_once() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-blog-header.php:13
+[24-Jan-2023 17:40:43 UTC] PHP   4. require_once() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-load.php:50
+[24-Jan-2023 17:40:43 UTC] PHP   5. require_once() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-config.php:93
+[24-Jan-2023 17:40:43 UTC] PHP Fatal error:  Cannot redeclare ashe_setup() (previously declared in C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\themes\chicdressing\functions.php:13) in C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\themes\ashe\functions.php on line 6
+[24-Jan-2023 17:40:43 UTC] PHP Stack trace:
+[24-Jan-2023 17:40:43 UTC] PHP   1. {main}() C:\Users\romai\Local Sites\chic-dressing\app\public\index.php:0
+[24-Jan-2023 17:40:43 UTC] PHP   2. require() C:\Users\romai\Local Sites\chic-dressing\app\public\index.php:17
+[24-Jan-2023 17:40:43 UTC] PHP   3. require_once() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-blog-header.php:13
+[24-Jan-2023 17:40:43 UTC] PHP   4. require_once() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-load.php:50
+[24-Jan-2023 17:40:43 UTC] PHP   5. require_once() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-config.php:93
+[24-Jan-2023 17:42:24 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function ashe_options() in C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\themes\ashe\templates\header\preloader.php:3
+Stack trace:
+#0 C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\template.php(785): require()
+#1 C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\template.php(718): load_template('C:\\Users\\romai\\...', false, Array)
+#2 C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\general-template.php(204): locate_template(Array, true, false, Array)
+#3 C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\themes\ashe\header.php(21): get_template_part('templates/heade...')
+#4 C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\template.php(783): require_once('C:\\Users\\romai\\...')
+#5 C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\template.php(718): load_template('C:\\Users\\romai\\...', true, Array)
+#6 C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\general in C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\themes\ashe\templates\header\preloader.php on line 3
