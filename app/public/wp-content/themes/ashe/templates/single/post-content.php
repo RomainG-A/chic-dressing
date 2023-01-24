@@ -33,7 +33,7 @@ if ( have_posts() ) :
 		?>
 
 		<?php if ( get_the_title() ) : ?>
-		<h1 class="post-title"><?php the_title(); ?></h1>
+		<h2 class="post-title"><?php the_title(); ?></h2>
 		<?php endif; ?>
 
 		<?php if ( ashe_options( 'single_page_show_date' ) || ashe_options( 'single_page_show_comments' ) ) : ?>

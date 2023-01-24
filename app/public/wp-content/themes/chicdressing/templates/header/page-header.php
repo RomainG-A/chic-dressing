@@ -11,11 +11,11 @@
 				$custom_logo 	= wp_get_attachment_image_src( $custom_logo_id , 'full' );
 
 				?>
-
+				<h1>
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr( bloginfo('name') ); ?>" class="logo-img">
 						<?php esc_attr( bloginfo('name') ); ?>
 					</a>
-
+				</h1>
 				<?php // SEO Hidden Title
 
 				if ( true === ashe_options( 'title_tagline_seo_title' ) ) {

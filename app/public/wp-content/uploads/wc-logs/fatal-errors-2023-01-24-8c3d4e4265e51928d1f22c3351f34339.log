@@ -1,0 +1,14 @@
+2023-01-24T17:40:43+00:00 CRITICAL Cannot redeclare ashe_setup() (previously declared in C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\themes\chicdressing\functions.php:13) dans C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\themes\ashe\functions.php à la ligne 6
+
+2023-01-24T17:40:43+00:00 CRITICAL Cannot redeclare ashe_setup() (previously declared in C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\themes\chicdressing\functions.php:13) dans C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\themes\ashe\functions.php à la ligne 6
+
+2023-01-24T17:42:24+00:00 CRITICAL Uncaught Error: Call to undefined function ashe_options() in C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\themes\ashe\templates\header\preloader.php:3
+Stack trace:
+#0 C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\template.php(785): require()
+#1 C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\template.php(718): load_template('C:\\Users\\romai\\...', false, Array)
+#2 C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\general-template.php(204): locate_template(Array, true, false, Array)
+#3 C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\themes\ashe\header.php(21): get_template_part('templates/heade...')
+#4 C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\template.php(783): require_once('C:\\Users\\romai\\...')
+#5 C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\template.php(718): load_template('C:\\Users\\romai\\...', true, Array)
+#6 C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\general dans C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\themes\ashe\templates\header\preloader.php à la ligne 3
+
