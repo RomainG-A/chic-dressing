@@ -69,3 +69,7 @@ body .header-logo a{
 /*
     Custom by Romain
 */
+
+a:not(.header-logo-a):hover{
+    color:white !important;
+}
