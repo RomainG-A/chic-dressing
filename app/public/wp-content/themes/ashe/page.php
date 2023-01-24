@@ -51,7 +51,7 @@ if ( is_front_page() ) {
 
 				if ( get_the_title() !== '' ) {
 					echo '<header class="post-header">';
-						echo '<h1 class="page-title">'. get_the_title() .'</h1>';
+						echo '<h2 class="page-title">'. get_the_title() .'</h2>';
 					echo '</header>';
 				}
 
