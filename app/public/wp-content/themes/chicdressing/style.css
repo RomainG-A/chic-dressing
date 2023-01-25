@@ -73,6 +73,6 @@ body .header-logo a{
 /*a:not(.header-logo-a):hover{
     color:white !important;
 }*/
-/*a:not(.logo-img):hover{
+.logo-img:hover{
     color:white !important;
-}*/
+}
