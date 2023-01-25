@@ -11,9 +11,16 @@ add_filter( 'big_image_size_threshold', '__return_false' );
     Fonctions de Romain
 */
 
-// h2 => h3 sur les titres de produits
+// h2 => h3 sur les titres de produits sur la page d'accueil
 remove_action( 'woocommerce_shop_loop_item_title','woocommerce_template_loop_product_title', 10 );
 add_action('woocommerce_shop_loop_item_title', 'chicdressing_woo_shop_products_title', 10 );
 function chicdressing_woo_shop_products_title() {
     echo '<h3 class="' . esc_attr( apply_filters( 'woocommerce_product_loop_title_classes', 'woocommerce-loop-product__title' ) ) . '">' . get_the_title() . '</h3>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+}
+
+// h1 => h2 sur les titres de produits sur les pages produits
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+add_action( 'woocommerce_single_product_summary', 'wc_template_single_title', 5 );
+function wc_template_single_title() {
+    echo '<h2 class="product_title entry-title">' . get_the_title() . '</h2>';
 }
