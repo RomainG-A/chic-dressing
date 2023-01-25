@@ -70,9 +70,30 @@ body .header-logo a{
     Custom by Romain
 */
 
-/*a:not(.header-logo-a):hover{
-    color:white !important;
-}*/
 .logo-img:hover{
     color:white !important;
 }
+
+/*body .header-logo a {
+    color: white;
+    text-shadow: 2px 3px 5px #d0527a;
+    transform: rotate(-9deg);
+}
+.header-logo a {
+    font-family: 'Kalam';
+}
+.header-logo a {
+    font-family: 'Kalam';
+}*/
+/*h1{
+    font-size: 80px;
+    color: white;
+    font-family: 'Kalam';
+    text-shadow: 2px 3px 5px #d0527a;
+    transform: rotate(-9deg);
+    display: block;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-size: 100px;
+    line-height: 1;
+}*/
