@@ -24,3 +24,13 @@ add_action( 'woocommerce_single_product_summary', 'wc_template_single_title', 5 
 function wc_template_single_title() {
     echo '<h2 class="product_title entry-title">' . get_the_title() . '</h2>';
 }
+
+// h1 => h2 sur la page "Shop"
+add_filter( 'woocommerce_show_page_title' , 'hide_page_title' );
+function hide_page_title() {
+    return false;
+}
+add_action( 'woocommerce_archive_description', 'wc_taxonomy_archive_description', 10);
+function wc_taxonomy_archive_description() {
+    echo '<h2 class="shop-page-title">' . woocommerce_page_title(false) . '</h2>';
+}
