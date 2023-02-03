@@ -79,3 +79,27 @@ Stack trace:
 [26-Jan-2023 16:13:38 UTC] PHP  14. WP_Hook->apply_filters() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\class-wp-hook.php:332
 [26-Jan-2023 16:13:38 UTC] PHP  15. FastCGI_Purger->purge_all() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\class-wp-hook.php:308
 [26-Jan-2023 16:13:38 UTC] PHP  16. touch() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\plugins\nginx-helper\admin\class-fastcgi-purger.php:192
+[03-Feb-2023 18:33:02 UTC] PHP Warning:  touch(): Unable to create file /tmp/pagespeed/cache.flush because No such file or directory in C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\plugins\nginx-helper\admin\class-fastcgi-purger.php on line 192
+[03-Feb-2023 18:33:02 UTC] PHP Stack trace:
+[03-Feb-2023 18:33:02 UTC] PHP   1. {main}() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-admin\admin-ajax.php:0
+[03-Feb-2023 18:33:02 UTC] PHP   2. do_action() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-admin\admin-ajax.php:188
+[03-Feb-2023 18:33:02 UTC] PHP   3. WP_Hook->do_action() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\plugin.php:517
+[03-Feb-2023 18:33:02 UTC] PHP   4. WP_Hook->apply_filters() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\class-wp-hook.php:332
+[03-Feb-2023 18:33:02 UTC] PHP   5. autoptimizeToolbar->delete_cache() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\class-wp-hook.php:308
+[03-Feb-2023 18:33:02 UTC] PHP   6. wp_send_json() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\plugins\autoptimize\classes\autoptimizeToolbar.php:133
+[03-Feb-2023 18:33:02 UTC] PHP   7. wp_die() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\functions.php:4417
+[03-Feb-2023 18:33:02 UTC] PHP   8. _ajax_wp_die_handler() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\functions.php:3713
+[03-Feb-2023 18:33:02 UTC] PHP   9. shutdown_action_hook() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\load.php:0
+[03-Feb-2023 18:33:02 UTC] PHP  10. do_action() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\load.php:1124
+[03-Feb-2023 18:33:02 UTC] PHP  11. WP_Hook->do_action() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\plugin.php:517
+[03-Feb-2023 18:33:02 UTC] PHP  12. WP_Hook->apply_filters() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\class-wp-hook.php:332
+[03-Feb-2023 18:33:02 UTC] PHP  13. autoptimize_do_cachepurged_action() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\class-wp-hook.php:308
+[03-Feb-2023 18:33:02 UTC] PHP  14. do_action() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\plugins\autoptimize\classes\autoptimizeCache.php:419
+[03-Feb-2023 18:33:02 UTC] PHP  15. WP_Hook->do_action() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\plugin.php:517
+[03-Feb-2023 18:33:02 UTC] PHP  16. WP_Hook->apply_filters() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\class-wp-hook.php:332
+[03-Feb-2023 18:33:02 UTC] PHP  17. autoptimizeCache::flushPageCache() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\class-wp-hook.php:306
+[03-Feb-2023 18:33:02 UTC] PHP  18. do_action() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\plugins\autoptimize\classes\autoptimizeCache.php:835
+[03-Feb-2023 18:33:02 UTC] PHP  19. WP_Hook->do_action() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\plugin.php:517
+[03-Feb-2023 18:33:02 UTC] PHP  20. WP_Hook->apply_filters() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\class-wp-hook.php:332
+[03-Feb-2023 18:33:02 UTC] PHP  21. FastCGI_Purger->purge_all() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-includes\class-wp-hook.php:308
+[03-Feb-2023 18:33:02 UTC] PHP  22. touch() C:\Users\romai\Local Sites\chic-dressing\app\public\wp-content\plugins\nginx-helper\admin\class-fastcgi-purger.php:192
