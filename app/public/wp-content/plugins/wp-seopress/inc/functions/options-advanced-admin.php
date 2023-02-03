@@ -8,31 +8,6 @@ global $pagenow;
 
 //Admin notices
 //=================================================================================================
-//License notice
-if (current_user_can(seopress_capability('manage_options', 'notice')) && is_seopress_page()) {
-    //PRO
-    if ('valid' != get_option('seopress_pro_license_status') && is_plugin_active('wp-seopress-pro/seopress-pro.php') && ! is_multisite()) {
-        function seopress_notice_license()
-        {
-            $screen_id = get_current_screen();
-            if ('seopress-option' === $screen_id->parent_base && 'seo_page_seopress-license' !== $screen_id->base) {
-                $docs = seopress_get_docs_links();
-
-                $class   = 'seopress-notice is-error';
-
-                $message = '<p><strong>' . __('Welcome to SEOPress PRO!', 'wp-seopress') . '</strong></p>';
-
-                $message .= '<p>' . __('Please activate your license to receive automatic updates and get premium support.', 'wp-seopress') . '</p>';
-
-                $message .= '<p><a class="btn btnPrimary" href="' . admin_url('admin.php?page=seopress-license') . '">' . __('Activate License', 'wp-seopress') . '</a></p>';
-
-                printf('<div class="%1$s">%2$s</div>', esc_attr($class), $message);
-            }
-        }
-        add_action('seopress_admin_notices', 'seopress_notice_license');
-    }
-}
-
 //Permalinks notice
 if (isset($pagenow) && 'options-permalink.php' == $pagenow) {
     function seopress_notice_permalinks()
@@ -63,7 +38,7 @@ if (isset($pagenow) && 'options-permalink.php' == $pagenow) {
 //Cleaning filename
 if (seopress_get_service('AdvancedOption')->getAdvancedCleaningFileName() === '1') {
     function seopress_image_seo_cleaning_filename($filename) {
-        $filename = do_action( 'seopress_image_seo_before_cleaning', $filename );
+        $filename = apply_filters( 'seopress_image_seo_before_cleaning', $filename );
 
         /* Force the file name in UTF-8 (encoding Windows / OS X / Linux) */
         $filename = mb_convert_encoding($filename, "UTF-8");
@@ -85,7 +60,7 @@ if (seopress_get_service('AdvancedOption')->getAdvancedCleaningFileName() === '1
         /* Remove uppercase */
         $friendly_filename = strtolower($friendly_filename);
 
-        $friendly_filename = do_action( 'seopress_image_seo_after_cleaning', $friendly_filename );
+        $friendly_filename = apply_filters( 'seopress_image_seo_after_cleaning', $friendly_filename );
 
         return $friendly_filename;
     }
@@ -181,16 +156,6 @@ if ('' != seopress_advanced_advanced_image_auto_title_editor_option() ||
 function seopress_advanced_appearance_metaboxe_position_option()
 {
     return seopress_get_service('AdvancedOption')->getAppearanceMetaboxePosition();
-
-}
-
-//Set default tab in schema metabox
-/**
- * @deprecated 5.4.0
- */
-function seopress_advanced_appearance_schema_default_tab_option()
-{
-    return seopress_get_service('AdvancedOption')->getAppearanceSchemaDefaultTab();
 
 }
 

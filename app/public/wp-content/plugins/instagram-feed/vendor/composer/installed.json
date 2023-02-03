@@ -7,15 +7,15 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:awesomemotive/sb-stubs.git",
-                "reference": "1f3cfc495280e072aac59933690164b3cb4d5b21"
+                "reference": "36cb174511ed63c008d2d3f2a77194612de489be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/awesomemotive/sb-stubs/zipball/1f3cfc495280e072aac59933690164b3cb4d5b21",
-                "reference": "1f3cfc495280e072aac59933690164b3cb4d5b21",
+                "url": "https://api.github.com/repos/awesomemotive/sb-stubs/zipball/36cb174511ed63c008d2d3f2a77194612de489be",
+                "reference": "36cb174511ed63c008d2d3f2a77194612de489be",
                 "shasum": ""
             },
-            "time": "2022-03-24T11:04:04+00:00",
+            "time": "2022-05-25T08:11:42+00:00",
             "default-branch": true,
             "type": "library",
             "installation-source": "dist",

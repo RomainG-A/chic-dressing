@@ -1,5 +1,4 @@
 <?php
-// phpcs:ignoreFile
 /**
  * Copyright (c) Facebook, Inc. and its affiliates. All Rights Reserved
  *
@@ -9,11 +8,11 @@
  * @package FacebookCommerce
  */
 
-namespace SkyVerge\WooCommerce\Facebook\API\FBE\Configuration\Update;
+namespace WooCommerce\Facebook\API\FBE\Configuration\Update;
 
-defined( 'ABSPATH' ) or exit;
+defined( 'ABSPATH' ) || exit;
 
-use SkyVerge\WooCommerce\Facebook\API\FBE\Configuration;
+use WooCommerce\Facebook\API\FBE\Configuration;
 
 /**
  * FBE Configuration update request object.
@@ -31,9 +30,7 @@ class Request extends Configuration\Request {
 	 * @param string $external_business_id external business ID
 	 */
 	public function __construct( $external_business_id ) {
-
 		parent::__construct( $external_business_id, 'POST' );
-
 		// include the business ID in the request body
 		$this->data['fbe_external_business_id'] = $external_business_id;
 	}

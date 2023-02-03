@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '32fa15240ac296f92a477f177de0acf333507d67',
+        'reference' => '485eb78065c52524e0e06973cd027ae3e41cadcd',
         'name' => 'smashballoon/instagram-feed',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '32fa15240ac296f92a477f177de0acf333507d67',
+            'reference' => '485eb78065c52524e0e06973cd027ae3e41cadcd',
             'dev_requirement' => false,
         ),
         'smashballoon/stubs' => array(
@@ -27,7 +27,7 @@
             'aliases' => array(
                 0 => '9999999-dev',
             ),
-            'reference' => '1f3cfc495280e072aac59933690164b3cb4d5b21',
+            'reference' => '36cb174511ed63c008d2d3f2a77194612de489be',
             'dev_requirement' => false,
         ),
     ),

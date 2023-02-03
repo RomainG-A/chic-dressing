@@ -7,22 +7,34 @@
  * LICENSE file in the root directory of this source tree.
  *
  * Plugin Name: Facebook for WooCommerce
- * Plugin URI: https://github.com/facebookincubator/facebook-for-woocommerce/
+ * Plugin URI: https://github.com/woocommerce/facebook-for-woocommerce/
  * Description: Grow your business on Facebook! Use this official plugin to help sell more of your products using Facebook. After completing the setup, you'll be ready to create ads that promote your products and you can also create a shop section on your Page where customers can browse your products on Facebook.
  * Author: Facebook
  * Author URI: https://www.facebook.com/
- * Version: 2.6.24
+ * Version: 3.0.9
+ * Requires at least: 5.6
  * Text Domain: facebook-for-woocommerce
- * Tested up to: 6.0
- * WC requires at least: 3.5.0
- * WC tested up to: 6.9
- * Requires PHP: 7.0
+ * Tested up to: 6.1
+ * WC requires at least: 5.4
+ * WC tested up to: 7.3
+ * Requires PHP: 7.2
  *
  * @package FacebookCommerce
  */
 
+use Automattic\WooCommerce\Utilities\FeaturesUtil;
+
 defined( 'ABSPATH' ) || exit;
 
+// HPOS compatibility declaration.
+add_action(
+	'before_woocommerce_init',
+	function() {
+		if ( class_exists( FeaturesUtil::class ) ) {
+			FeaturesUtil::declare_compatibility( 'custom_order_tables', plugin_basename( __FILE__ ), true );
+		}
+	}
+);
 /**
  * The plugin loader class.
  *
@@ -33,16 +45,16 @@ class WC_Facebook_Loader {
 	/**
 	 * @var string the plugin version. This must be in the main plugin file to be automatically bumped by Woorelease.
 	 */
-	const PLUGIN_VERSION = '2.6.24'; // WRCS: DEFINED_VERSION.
+	const PLUGIN_VERSION = '3.0.9'; // WRCS: DEFINED_VERSION.
 
 	// Minimum PHP version required by this plugin.
-	const MINIMUM_PHP_VERSION = '7.0.0';
+	const MINIMUM_PHP_VERSION = '7.2.0';
 
 	// Minimum WordPress version required by this plugin.
 	const MINIMUM_WP_VERSION = '4.4';
 
 	// Minimum WooCommerce version required by this plugin.
-	const MINIMUM_WC_VERSION = '3.5.0';
+	const MINIMUM_WC_VERSION = '5.3';
 
 	// SkyVerge plugin framework version used by this plugin.
 	const FRAMEWORK_VERSION = '5.10.0';
@@ -120,26 +132,11 @@ class WC_Facebook_Loader {
 			return;
 		}
 
-		$this->load_framework();
-
 		require_once plugin_dir_path( __FILE__ ) . 'class-wc-facebookcommerce.php';
 
 		// fire it up!
 		if ( function_exists( 'facebook_for_woocommerce' ) ) {
 			facebook_for_woocommerce();
-		}
-	}
-
-
-	/**
-	 * Loads the base framework classes.
-	 *
-	 * @since 1.10.0
-	 */
-	private function load_framework() {
-
-		if ( ! class_exists( '\\SkyVerge\\WooCommerce\\PluginFramework\\' . $this->get_framework_version_namespace() . '\\SV_WC_Plugin' ) ) {
-			require_once plugin_dir_path( __FILE__ ) . 'vendor/skyverge/wc-plugin-framework/woocommerce/class-sv-wc-plugin.php';
 		}
 	}
 
@@ -152,7 +149,6 @@ class WC_Facebook_Loader {
 	 * @return string
 	 */
 	public function get_framework_version_namespace() {
-
 		return 'v' . str_replace( '.', '_', $this->get_framework_version() );
 	}
 
@@ -309,7 +305,6 @@ class WC_Facebook_Loader {
 	 * @return bool
 	 */
 	private function plugins_compatible() {
-
 		return $this->is_wp_compatible() && $this->is_wc_compatible();
 	}
 
@@ -447,7 +442,6 @@ class WC_Facebook_Loader {
 	 * @return bool
 	 */
 	private function is_environment_compatible() {
-
 		return version_compare( PHP_VERSION, self::MINIMUM_PHP_VERSION, '>=' );
 	}
 

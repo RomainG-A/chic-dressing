@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'facebookincubator/facebook-for-woocommerce',
-        'pretty_version' => 'dev-release/2.6.24',
-        'version' => 'dev-release/2.6.24',
-        'reference' => '36471d38a2f3ab8e533c52fcc6143d008dad1f37',
+        'pretty_version' => 'dev-release/3.0.9',
+        'version' => 'dev-release/3.0.9',
+        'reference' => 'c0d699f943fdeaa7f7c2ca9a6473a70fe2e22283',
         'type' => 'wordpress-plugin',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -20,9 +20,9 @@
             'dev_requirement' => false,
         ),
         'facebookincubator/facebook-for-woocommerce' => array(
-            'pretty_version' => 'dev-release/2.6.24',
-            'version' => 'dev-release/2.6.24',
-            'reference' => '36471d38a2f3ab8e533c52fcc6143d008dad1f37',
+            'pretty_version' => 'dev-release/3.0.9',
+            'version' => 'dev-release/3.0.9',
+            'reference' => 'c0d699f943fdeaa7f7c2ca9a6473a70fe2e22283',
             'type' => 'wordpress-plugin',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -39,15 +39,6 @@
             'replaced' => array(
                 0 => '*',
             ),
-        ),
-        'skyverge/wc-plugin-framework' => array(
-            'pretty_version' => '5.10.0',
-            'version' => '5.10.0.0',
-            'reference' => 'e230d7c40286854e49c0cafeec3398cbf2427a64',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../skyverge/wc-plugin-framework',
-            'aliases' => array(),
-            'dev_requirement' => false,
         ),
         'woocommerce/action-scheduler-job-framework' => array(
             'pretty_version' => '2.0.0',

@@ -254,6 +254,7 @@ class SWP_Database_Migration {
 				wp_die('You do not have authorization to view this page.');
 			}
 			$post_type = isset( $_GET['post_type'] ) ? $_GET['post_type'] : 'page';
+			$post_type = sanitize_text_field( $post_type );
 			$this->reset_post_meta_float_location( $post_type );
 		}
 
@@ -300,7 +301,7 @@ class SWP_Database_Migration {
 		}
 
 		if ( true === SWP_Utility::debug( ( 'delete_plugin_data' ) ) ) {
-			$password = isset($_GET['swp_confirmation']) ? urldecode($_GET['swp_confirmation']) : '';
+			$password = isset($_GET['swp_confirmation']) ? sanitize_text_field( urldecode( $_GET['swp_confirmation'] ) ) : '';
 			$user = wp_get_current_user();
 			if ( !current_user_can( 'manage_options' )
 			|| false == wp_check_password( $password, $user->user_pass, $user->ID) ) {

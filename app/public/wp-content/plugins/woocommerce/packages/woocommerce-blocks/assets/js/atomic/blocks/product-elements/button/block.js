@@ -8,6 +8,12 @@ import {
 	useStoreEvents,
 	useStoreAddToCart,
 } from '@woocommerce/base-context/hooks';
+import {
+	useBorderProps,
+	useColorProps,
+	useTypographyProps,
+	useSpacingProps,
+} from '@woocommerce/base-hooks';
 import { decodeEntities } from '@wordpress/html-entities';
 import { CART_URL } from '@woocommerce/block-settings';
 import { getSetting } from '@woocommerce/settings';
@@ -21,29 +27,24 @@ import { withProductDataContext } from '@woocommerce/shared-hocs';
  * Internal dependencies
  */
 import './style.scss';
-import {
-	useBorderProps,
-	useColorProps,
-	useTypographyProps,
-	useSpacingProps,
-} from '../../../../hooks/style-attributes';
 
 /**
  * Product Button Block Component.
  *
  * @param {Object} props             Incoming props.
  * @param {string} [props.className] CSS Class name for the component.
+ * @param {string} [props.textAlign] Text alignment.
  * @return {*} The component.
  */
-const Block = ( props ) => {
+export const Block = ( props ) => {
 	const { className } = props;
-
 	const { parentClassName } = useInnerBlockLayoutContext();
 	const { product } = useProductDataContext();
 	const colorProps = useColorProps( props );
 	const borderProps = useBorderProps( props );
 	const typographyProps = useTypographyProps( props );
 	const spacingProps = useSpacingProps( props );
+	const { textAlign } = props;
 
 	return (
 		<div
@@ -52,7 +53,11 @@ const Block = ( props ) => {
 				'wp-block-button',
 				'wc-block-components-product-button',
 				{
-					[ `${ parentClassName }__product-add-to-cart` ]: parentClassName,
+					[ `${ parentClassName }__product-add-to-cart` ]:
+						parentClassName,
+				},
+				{
+					[ `has-text-align-${ textAlign }` ]: textAlign,
 				}
 			) }
 		>
@@ -79,12 +84,13 @@ const Block = ( props ) => {
 /**
  * Product Button Block Component.
  *
- * @param {Object} props             Incoming props.
- * @param {Object} [props.product] Product.
- * @param {Object} [props.colorStyles] Object contains CSS class and CSS style for color.
- * @param {Object} [props.borderStyles] Object contains CSS class and CSS style for border.
+ * @param {Object} props                    Incoming props.
+ * @param {Object} [props.product]          Product.
+ * @param {Object} [props.colorStyles]      Object contains CSS class and CSS style for color.
+ * @param {Object} [props.borderStyles]     Object contains CSS class and CSS style for border.
  * @param {Object} [props.typographyStyles] Object contains CSS class and CSS style for typography.
- * @param {Object} [props.spacingStyles] Object contains CSS style for spacing.
+ * @param {Object} [props.spacingStyles]    Object contains CSS style for spacing.
+ * @param {Object} [props.textAlign]        Text alignment.
  *
  * @return {*} The component.
  */
@@ -94,6 +100,7 @@ const AddToCartButton = ( {
 	borderStyles,
 	typographyStyles,
 	spacingStyles,
+	textAlign,
 } ) => {
 	const {
 		id,
@@ -104,7 +111,10 @@ const AddToCartButton = ( {
 		is_in_stock: isInStock,
 	} = product;
 	const { dispatchStoreEvent } = useStoreEvents();
-	const { cartQuantity, addingToCart, addToCart } = useStoreAddToCart( id );
+	const { cartQuantity, addingToCart, addToCart } = useStoreAddToCart(
+		id,
+		`woocommerce/single-product/${ id || 0 }`
+	);
 
 	const addedToCart = Number.isFinite( cartQuantity ) && cartQuantity > 0;
 	const allowAddToCart = ! hasOptions && isPurchasable && isInStock;
@@ -139,8 +149,8 @@ const AddToCartButton = ( {
 			} );
 		};
 	} else {
-		buttonProps.onClick = () => {
-			addToCart();
+		buttonProps.onClick = async () => {
+			await addToCart();
 			dispatchStoreEvent( 'cart-add-item', {
 				product,
 			} );
@@ -158,6 +168,7 @@ const AddToCartButton = ( {
 			aria-label={ buttonAriaLabel }
 			className={ classnames(
 				'wp-block-button__link',
+				'wp-element-button',
 				'add_to_cart_button',
 				'wc-block-components-product-button__button',
 				colorStyles.className,
@@ -165,6 +176,9 @@ const AddToCartButton = ( {
 				{
 					loading: addingToCart,
 					added: addedToCart,
+				},
+				{
+					[ `has-text-align-${ textAlign }` ]: textAlign,
 				}
 			) }
 			style={ {
@@ -184,11 +198,11 @@ const AddToCartButton = ( {
 /**
  * Product Button Block Component.
  *
- * @param {Object} props             Incoming props.
- * @param {Object} [props.colorStyles] Object contains CSS class and CSS style for color.
- * @param {Object} [props.borderStyles] Object contains CSS class and CSS style for border.
+ * @param {Object} props                    Incoming props.
+ * @param {Object} [props.colorStyles]      Object contains CSS class and CSS style for color.
+ * @param {Object} [props.borderStyles]     Object contains CSS class and CSS style for border.
  * @param {Object} [props.typographyStyles] Object contains CSS class and CSS style for typography.
- * @param {Object} [props.spacingStyles] Object contains CSS style for spacing.
+ * @param {Object} [props.spacingStyles]    Object contains CSS style for spacing.
  *
  * @return {*} The component.
  */
@@ -202,6 +216,7 @@ const AddToCartButtonPlaceholder = ( {
 		<button
 			className={ classnames(
 				'wp-block-button__link',
+				'wp-element-button',
 				'add_to_cart_button',
 				'wc-block-components-product-button__button',
 				'wc-block-components-product-button__button--placeholder',
