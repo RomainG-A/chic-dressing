@@ -302,6 +302,12 @@
 			$('#customize-control-blogname').find('input').val( blogname ).trigger('keyup');
 		});
 
+	/*
+	** Add Request Feature Link
+	*/
+	$('#customize-control-ashe_options-social_media_url_1').append('<a href="https://wp-royal-themes.com/contact/#!/cform" target="_blank" class="button button-primary" style="margin-top: 15px;">Request New Social Icon <span class="dashicons dashicons-external" style="font-size: 14px; line-height: 29px;"></span></a>');
+
+
 	}); // wp.customize ready
 
 })( jQuery );

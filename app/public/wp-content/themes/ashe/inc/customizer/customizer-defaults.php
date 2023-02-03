@@ -60,7 +60,7 @@ function ashe_options( $control ) {
 		'blog_page_show_facebook' => false,
 		'blog_page_show_twitter' => false,
 		'blog_page_show_pinterest' => false,
-		'blog_page_show_google' => false,
+		'blog_page_show_whatsapp' => false,
 		'blog_page_show_linkedin' => false,
 		'blog_page_show_reddit' => false,
 		'blog_page_show_tumblr' => false,

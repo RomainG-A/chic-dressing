@@ -30,7 +30,7 @@
 				
 				<div class="post-media">
 					<a href="<?php echo esc_url( get_permalink() ); ?>"></a>
-					<?php the_post_thumbnail('full'); ?>
+					<?php the_post_thumbnail('ashe-full-thumbnail'); ?>
 				</div>
 
 				<header class="post-header">
