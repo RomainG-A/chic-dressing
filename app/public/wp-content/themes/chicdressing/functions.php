@@ -34,3 +34,9 @@ add_action( 'woocommerce_archive_description', 'wc_taxonomy_archive_description'
 function wc_taxonomy_archive_description() {
     echo '<h2 class="shop-page-title">' . woocommerce_page_title(false) . '</h2>';
 }
+
+// changement de l'URL de la boutique de "shop" en "boutique"
+add_filter( 'woocommerce_get_shop_page_permalink', 'wc_change_shop_page_permalink' );
+function wc_change_shop_page_permalink( $permalink ) {
+    return home_url( '/boutique/' );
+}
