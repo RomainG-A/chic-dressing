@@ -226,20 +226,20 @@ function ashe_true_false( $option ) {
 		.rpwwt-post-categories,
 		.rpwwt-post-date,
 		.rpwwt-post-comments-number {
-			color: #a1a1a1;
+			color: #767676;
 		}
 
 		.page-content input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-		  color: #a1a1a1;
+		  color: #767676;
 		}
 		.page-content input::-moz-placeholder { /* Firefox 19+ */
-		  color: #a1a1a1;
+		  color: #767676;
 		}
 		.page-content input:-ms-input-placeholder { /* IE 10+ */
-		  color: #a1a1a1;
+		  color: #767676;
 		}
 		.page-content input:-moz-placeholder { /* Firefox 18- */
-		  color: #a1a1a1;
+		  color: #767676;
 		}
 		
 	
@@ -964,11 +964,11 @@ function ashe_true_false( $option ) {
 		.woocommerce .widget_recently_viewed_products .amount,
 		.woocommerce .widget_top_rated_products .amount,
 		.woocommerce .widget_recent_reviews .reviewer {
-		    color: #a1a1a1;
+		    color: #767676;
 		}
 
 		.woocommerce a.remove {
-		    color: #a1a1a1 !important;
+		    color: #767676 !important;
 		}
 	';
 
